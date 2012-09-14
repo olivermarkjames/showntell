@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @slide.content %>
+</p>
+
+<p>
+  <b>Micropost:</b>
+  <%= @slide.micropost_id %>
+</p>
+
+<p>
+  <b>Cover image uid:</b>
+  <%= image_tag @slide.cover_image.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_slide_path(@slide) %> |
+<%= link_to 'Back', slides_path %>

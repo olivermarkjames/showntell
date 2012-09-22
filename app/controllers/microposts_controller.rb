@@ -14,8 +14,15 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
+    @user = @current_user
+    @user.currentmicropost = '1'
+    @user.save
     @micropost.destroy
     redirect_to root_path
+  end
+
+  def view
+
   end
 
   private

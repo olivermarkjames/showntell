@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   def edit
   end
 
+
   def update
     if @user.update_attributes(params[:user])
       sign_in @user

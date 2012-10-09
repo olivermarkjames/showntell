@@ -42,15 +42,13 @@ class SlidesController < ApplicationController
   def create
     @slide = Slide.new(params[:slide])
 
-    respond_to do |format|
+    
       if @slide.save
-        format.html { redirect_to @slide, notice: 'Slide was successfully created.' }
-        format.json { render json: @slide, status: :created, location: @slide }
+        flash[:success] = "Slide Posted"
+        redirect_to root_path({:post => @slide.micropost_id})
       else
-        format.html { render action: "new" }
-        format.json { render json: @slide.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
   end
 
   # PUT /slides/1

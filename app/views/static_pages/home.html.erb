@@ -7,9 +7,15 @@
       <section>
         <%= render 'shared/stats' %>
       </section>
+    <% if @post.blank? %>  
       <section>
         <%= render 'shared/micropost_form' %>
       </section>
+    <% else %>
+      <section>
+        <%= render 'shared/slide' %>
+      </section>
+    <% end %>
     </aside>
     <div class="span8">
       <h3>Micropost Feed</h3>

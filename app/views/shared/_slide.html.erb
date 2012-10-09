@@ -1,0 +1,31 @@
+<li>
+  <span class="content"><%= @post.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(@post.created_at) %> ago.
+  </span>
+  <% if current_user?(@post.user) %>
+    <%= link_to "delete", @post, method: :view,
+                                     confirm: "You sure?",
+                                     title: @post.content %>
+  <% end %>
+</li> 
+<% @slides.each do |slide| %>
+  <tr>
+    <td><%= slide.content %></td>
+    <td><%= slide.micropost_id %></td>
+    <td><%= link_to 'Show', slide %></td>
+    <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
+    <td><%= link_to 'Destroy', slide, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+<%= form_for(@slide) do |f| %>
+  <%= render 'shared/error_messages', object: @slide %>
+
+    <%= f.hidden_field :micropost_id, :value => @post.id %>
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+
+<%= f.submit "Add Slide", class:"btn btn-large btn-primary" %>
+<% end %>

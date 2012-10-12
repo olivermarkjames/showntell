@@ -1,4 +1,4 @@
-SampleApp::Application.routes.draw do
+Intensedepths::Application.routes.draw do
   resources :slides
 
   resources :users do

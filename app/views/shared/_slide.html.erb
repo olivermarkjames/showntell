@@ -13,6 +13,7 @@
   <tr>
     <td><%= slide.content %></td>
     <td><%= slide.micropost_id %></td>
+    <td><%= slide.image.thumb %></td>
     <td><%= link_to 'Show', slide %></td>
     <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
     <td><%= link_to 'Destroy', slide, confirm: 'Are you sure?', method: :delete %></td>

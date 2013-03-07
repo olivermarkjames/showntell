@@ -128,8 +128,8 @@ GEM
     net-ssh (2.5.2)
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
-    pg (0.12.2)
-    pg (0.12.2-x86-mingw32)
+    pg (0.14.1)
+    pg (0.14.1-x86-mingw32)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -208,6 +208,7 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -228,7 +229,7 @@ DEPENDENCIES
   jquery-rails
   launchy (= 2.1.0)
   mini_magick
-  pg (= 0.12.2)
+  pg (= 0.14.1)
   rails (= 3.2.3)
   rb-fsevent (= 0.4.3.1)
   rspec-rails (= 2.9.0)

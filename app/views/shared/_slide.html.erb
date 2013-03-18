@@ -13,7 +13,7 @@
   <tr>
     <td><p><%= slide.content %></p></td>
     <td><%= slide.micropost_id %></td>
-    <img class="gravatar" src="<%= escape_javascript(slide.image.thumb) %>" alt="<%= escape_javascript(slide.content) %>"></img>
+    <img src="<%= escape_javascript(slide.image.thumb) %>"></img>
     <td><%= link_to 'Show', slide %></td>
     <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
     <td><%= link_to 'Destroy', slide, confirm: 'Are you sure?', method: :delete %></td>

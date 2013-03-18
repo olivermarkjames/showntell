@@ -45,7 +45,10 @@ class SlidesController < ApplicationController
     
       if @slide.save
         flash[:success] = "Slide Posted"
-        redirect_to root_path({:post => @slide.micropost_id})
+        respond_to do |format|
+          format.js   {}
+          format.json { render json: @slide, status: :created, location: @slide }
+        end
       else
         render 'new'
       end
@@ -76,6 +79,15 @@ class SlidesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to slides_url }
       format.json { head :no_content }
+    end
+  end
+
+  def add
+    @slides = Slide.all
+    #respond_with(@comment)
+    respond_to do |format|
+      format.js   {}
+      format.json { render json: @slide, status: :created, location: @slide }
     end
   end
 end

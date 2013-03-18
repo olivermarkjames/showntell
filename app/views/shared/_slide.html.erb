@@ -8,18 +8,19 @@
                                      confirm: "You sure?",
                                      title: @post.content %>
   <% end %>
-</li> 
+</li>
+<div class="update"> 
 <% @slides.each do |slide| %>
   <tr>
     <td><p><%= slide.content %></p></td>
     <td><%= slide.micropost_id %></td>
-    <img src="<%= escape_javascript(slide.image_url.to_s) %>" alt="<%= escape_javascript(slide.content) %>" width="433" height="270" ></img>
     <%= image_tag slide.image_url(:thumb).to_s %> 
     <td><%= link_to 'Show', slide %></td>
     <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
     <td><%= link_to 'Destroy', slide, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+</div>
 <%= form_for(@slide) do |f| %>
   <%= render 'shared/error_messages', object: @slide %>
 

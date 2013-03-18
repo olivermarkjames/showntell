@@ -1,0 +1,10 @@
+<% @slides.each do |slide| %>
+  <tr>
+    <td><p><%= slide.content %></p></td>
+    <td><%= slide.micropost_id %></td>
+    <%= image_tag slide.image_url(:thumb).to_s %> 
+    <td><%= link_to 'Show', slide %></td>
+    <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
+    <td><%= link_to 'Destroy', slide, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>

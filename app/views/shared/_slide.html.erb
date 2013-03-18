@@ -11,8 +11,9 @@
 </li> 
 <% @slides.each do |slide| %>
   <tr>
-    <td><%= slide.content %></td>
+    <td><p><%= slide.content %></p></td>
     <td><%= slide.micropost_id %></td>
+    <img class="gravatar" src=slide.image.thumb alt="Oli James"></img>
     <td><%= slide.image.thumb %></td>
     <td><%= link_to 'Show', slide %></td>
     <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
